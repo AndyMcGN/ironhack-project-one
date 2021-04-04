@@ -1,0 +1,18 @@
+* { background-color: blue;}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+
+canvas {
+    background-image: url("/assets/city-bg.jpg");    
+}
+
+input {
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 20px;
+    width: 50%;
+}
