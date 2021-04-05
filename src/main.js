@@ -1,5 +1,8 @@
 const game = new Game();
-let mode = 'welcome';
+
+function preload() {
+        game.preload();
+    }
 
 function setup() {
     let canvas = createCanvas(1200,800);
@@ -9,14 +12,17 @@ function setup() {
 
 function draw() {
     clear();
-    // if (mode == 'welcome') {
-    //     text("hello, welcome", 100, 100)
-    // };
-    // if (mode === 'play') {
-        game.draw();
-    // }
+
+    game.draw();
+
 }
 
-function keyReleased() {
-    game.checkInput();
+function keyReleased(key) {
+    if (mode === 'welcome' && keyCode === ENTER) {
+        mode = 'play';
+        document.querySelector("input").focus();
+    }
+    else {
+        game.checkInput();
+    };
 }

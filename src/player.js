@@ -17,20 +17,23 @@ class Player {
     }
 
 
-    draw() {
 
-    }
 
     updateScore() {
         this.score++;
         console.log(this.score);
         document.querySelector("#score").innerText = this.score;
+        if (game.player.score % 3) {
+            game.fallingWords.increaseDifficulty();
+        }
+
     };
 
     loseLife() {
         this.lives--;
         document.querySelector("#lives").innerText = this.lives;
         if (this.lives === 0) {
+            mode = 'game-over';
             game.gameOver();
         }
     }
