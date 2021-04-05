@@ -1,4 +1,7 @@
-* { background-color: blue;}
+* { 
+    background-color: blue;
+    font-family: roboto;
+}
 
 body {
     display: flex;
@@ -15,4 +18,13 @@ input {
     padding: 10px 30px;
     border-radius: 20px;
     width: 50%;
+    font-size: 32px;
+    text-align: center;
+}
+
+#scoreDiv, #score {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 32px;
 }

@@ -3,14 +3,16 @@ class Game {
     setup() {
         this.dictionary = this.makeDictionary(words);
         this.input = new Input();
+        this.player = new Player();
 
         this.input.setup();
+        this.player.setup();
         this.fallingWords = [];
         console.log(this.dictionary)
     }
 
     draw() {
-        this.input.draw();
+        // this.input.draw();
         
         if (frameCount % 50 === 0) {
             let randomIndex = Math.floor(Math.random()* this.dictionary.length);
@@ -47,9 +49,15 @@ class Game {
     };
 
     checkInput() {
-        if(this.input.isCorrectAnswer()) {
-            console.log('correct answer');
-            alert('correct answer')
+        let correctAnswer = this.input.isCorrectAnswer();
+        if(correctAnswer) {
+            console.log(correctAnswer);
+
+            let answerIndex = this.fallingWords.indexOf(correctAnswer);
+
+            this.fallingWords[answerIndex].stopFalling();
+            this.player.updateScore();
+            
         };
     };
 
