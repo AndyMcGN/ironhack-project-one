@@ -15,23 +15,18 @@ class Game {
         // this.input.draw();
         
         if (frameCount % 50 === 0) {
-            let randomIndex = Math.floor(Math.random()* this.dictionary.length);
-            let wordToAdd = this.dictionary[randomIndex];
-
-            if (!this.fallingWords.currentlyFalling.includes(wordToAdd)) {
-                wordToAdd.x = this.x = (Math.random() * width/1.3) + 100;
-                wordToAdd.y = 0;
-                this.fallingWords.currentlyFalling.push(wordToAdd);
-                // console.log(this.fallingWords);
-            }
+            this.fallingWords.addWordtoFalling();
         }
 
+        this.fallingWords.filterMissedWords();
+        
         this.fallingWords.currentlyFalling.forEach(function (word) {
             word.draw();
         })
     }
 
     makeDictionary(stringOfWords) {
+
         const dict = [];
         const arrayOfPairs = stringOfWords.split(";");
     
@@ -49,7 +44,9 @@ class Game {
     };
 
     checkInput() {
+
         let correctAnswer = this.input.isCorrectAnswer();
+        
         if(correctAnswer) {
             console.log(correctAnswer);
 
