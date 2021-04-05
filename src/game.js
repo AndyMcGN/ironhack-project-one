@@ -7,7 +7,7 @@ class Game {
 
         this.input.setup();
         this.player.setup();
-        this.fallingWords = [];
+        this.fallingWords = new fallingWords();
         console.log(this.dictionary)
     }
 
@@ -18,15 +18,15 @@ class Game {
             let randomIndex = Math.floor(Math.random()* this.dictionary.length);
             let wordToAdd = this.dictionary[randomIndex];
 
-            if (!this.fallingWords.includes(wordToAdd)) {
+            if (!this.fallingWords.currentlyFalling.includes(wordToAdd)) {
                 wordToAdd.x = this.x = (Math.random() * width/1.3) + 100;
                 wordToAdd.y = 0;
-                this.fallingWords.push(wordToAdd);
+                this.fallingWords.currentlyFalling.push(wordToAdd);
                 // console.log(this.fallingWords);
             }
         }
 
-        this.fallingWords.forEach(function (word) {
+        this.fallingWords.currentlyFalling.forEach(function (word) {
             word.draw();
         })
     }
@@ -53,9 +53,9 @@ class Game {
         if(correctAnswer) {
             console.log(correctAnswer);
 
-            let answerIndex = this.fallingWords.indexOf(correctAnswer);
+            let answerIndex = this.fallingWords.currentlyFalling.indexOf(correctAnswer);
 
-            this.fallingWords[answerIndex].stopFalling();
+            this.fallingWords.currentlyFalling[answerIndex].stopFalling();
             this.player.updateScore();
             
         };

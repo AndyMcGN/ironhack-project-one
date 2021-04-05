@@ -18,7 +18,7 @@ class Word {
         this.y+= this.velocity;
 
 
-        game.fallingWords = game.fallingWords.filter (word => {
+        game.fallingWords.currentlyFalling = game.fallingWords.currentlyFalling.filter (word => {
             if (word.y >= height -100) {
                 game.player.loseLife();
                 return false;
@@ -34,7 +34,7 @@ class Word {
         console.log("Stoppping falling")
         console.log(this);
         
-        game.fallingWords = game.fallingWords.filter(wordToCheck => {
+        game.fallingWords.currentlyFalling = game.fallingWords.currentlyFalling.filter(wordToCheck => {
             if (this.lang1 === wordToCheck.lang1) return false;
             return true;
         })

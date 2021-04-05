@@ -16,7 +16,7 @@ class Input {
         console.log(this.input.value());
         // console.log(game.word.lang2);
         
-        for (let word of game.fallingWords)  {
+        for (let word of game.fallingWords.currentlyFalling)  {
             // console.log(word.lang2);
             
             if (this.input.value() === word.lang2) {

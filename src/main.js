@@ -9,12 +9,12 @@ function setup() {
 
 function draw() {
     clear();
-    if (mode == 'welcome') {
-        text("hello, welcome", 100, 100)
-    };
-    if (mode === 'play') {
+    // if (mode == 'welcome') {
+    //     text("hello, welcome", 100, 100)
+    // };
+    // if (mode === 'play') {
         game.draw();
-    }
+    // }
 }
 
 function keyReleased() {
