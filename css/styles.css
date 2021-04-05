@@ -22,9 +22,14 @@ input {
     text-align: center;
 }
 
-#scoreDiv, #score {
+.player-info, .player-info>span {
     background-color: white;
     padding: 10px;
     border-radius: 10px;
-    font-size: 32px;
+    font-size: 18px;
+    width: 100px
+}
+
+.word {
+    color: red;
 }

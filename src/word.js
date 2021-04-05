@@ -6,18 +6,23 @@ class Word {
         this.y = 0;
         this.velocity = 0.5
         
+        
     }
 
 
     draw() {
         
         textSize(32);
+        fill(255,0,0);
         text(this.lang1, this.x, this.y);
         this.y+= this.velocity;
 
 
         game.fallingWords = game.fallingWords.filter (word => {
-            if (word.y >= height -100) return false;
+            if (word.y >= height -100) {
+                game.player.loseLife();
+                return false;
+            }
             return true;
         })
 

@@ -61,6 +61,10 @@ class Game {
         };
     };
 
+    gameOver() {
+        alert('you lost!')
+    }
+
 };
 
 let words = 
