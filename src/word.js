@@ -3,8 +3,9 @@ class Word {
         this.lang1 = lang1;
         this.lang2 = lang2;
         this.x = (Math.random() * width/1.3) + 100;
-        this.y = 0; 
-        
+        this.y = -400; 
+        // this.hotAirBalloon1 = game.gameBalloons[0];
+        this.index = Math.floor(Math.random()* game.gameBalloons.length)
     }
     // setup() {
 
@@ -14,10 +15,11 @@ class Word {
     draw() {
 
         textSize(32);
-        fill(255,0,0);
+        textStyle(BOLD)
+        fill(149,20,169);
         text(this.lang1, this.x, this.y);
         this.y+= game.fallingWords.velocity;
-        // image(hotAirBalloon1, 500, 500);
+        image(game.gameBalloons[this.index], this.x-100, this.y-100, 200, 300);
 
     }
 

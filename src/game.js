@@ -6,6 +6,20 @@ class Game {
         this.welcomeBalloons = [
             loadImage("/assets/welcome-balloon.png"),
         ];
+
+        this.gameBalloons = [
+            loadImage("/assets/hotairballoon2.png"),
+            loadImage("/assets/hotairballoon3.png"),
+            loadImage("/assets/hotairballoon4.png"),
+            loadImage("/assets/hotairballoon6.png"),
+            loadImage("/assets/hotairballoon7.png"),
+            loadImage("/assets/hotairballoon8.png"),
+            loadImage("/assets/hotairballoon9.png"),
+            loadImage("/assets/hotairballoon10.png"),
+            loadImage("/assets/hotairballoon11.png"),
+
+
+        ]
         }
 
     setup() {
@@ -36,7 +50,7 @@ class Game {
 
             this.fallingWords.filterMissedWords();
         
-            this.fallingWords.currentlyFalling.forEach(function (word) {
+            this.fallingWords.currentlyFalling.slice().reverse().forEach(function (word) {
                 word.draw();
             });
         

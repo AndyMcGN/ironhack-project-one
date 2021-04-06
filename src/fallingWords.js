@@ -1,7 +1,7 @@
 class fallingWords {
     constructor() {
         this.currentlyFalling = [];
-        this.velocity = 3; //change back to 0.5 after testing
+        this.velocity = 1; //change back to 0.5 after testing
         this.framesTillNextWord = 150;
 
     }
@@ -21,11 +21,28 @@ class fallingWords {
         let wordToAdd = game.dictionary[randomIndex];
 
         if (!this.currentlyFalling.includes(wordToAdd)) {
-            wordToAdd.x = (Math.random() * width/1.3) + 100;
-            wordToAdd.y = 0;
+            
+
+            wordToAdd.x = this.getSafeXValue();
+             
+            wordToAdd.y = -200;
             this.currentlyFalling.push(wordToAdd);
             // console.log(this.fallingWords);
         }
+    }
+
+    getSafeXValue() {
+        if (this.currentlyFalling.length === 0) return (Math.random() * width/1.3) + 100;
+        
+        let previousWord = this.currentlyFalling[this.currentlyFalling.length -1];
+        console.log(previousWord)
+        let x = previousWord.x;
+        do {
+            x = (Math.random() * width/1.3) + 150;
+        }
+        while (Math.abs(x - previousWord.x) < 300);
+
+        return x;
     }
 
     increaseDifficulty() {
