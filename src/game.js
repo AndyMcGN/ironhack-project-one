@@ -17,9 +17,8 @@ class Game {
             loadImage("/assets/hotairballoon9.png"),
             loadImage("/assets/hotairballoon10.png"),
             loadImage("/assets/hotairballoon11.png"),
-
-
         ]
+
         }
 
     setup() {
@@ -37,6 +36,7 @@ class Game {
  
 
     draw() {
+
         
         if (mode === 'welcome') {
             this.showWelcomeScreen();
@@ -44,6 +44,7 @@ class Game {
         }
 
         if (mode === 'play') {
+
             if (frameCount % this.fallingWords.framesTillNextWord === 0) {
                 this.fallingWords.addWordtoFalling();
             }

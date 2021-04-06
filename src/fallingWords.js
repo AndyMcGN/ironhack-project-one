@@ -8,7 +8,7 @@ class fallingWords {
 
     filterMissedWords() {
         this.currentlyFalling = this.currentlyFalling.filter (word => {
-            if (word.y >= height -100) {
+            if (word.y >= height) {
                 game.player.loseLife();
                 return false;
             }
