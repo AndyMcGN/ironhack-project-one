@@ -1,6 +1,7 @@
 * { 
-    background-color: blue;
     font-family: roboto;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -9,11 +10,13 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
+    background-image: url("../assets/main_bg.jpg");   
 }
 
 
 canvas {
-    background-image: url("../assets/city-bg.jpg");    
+    background-image: url("../assets/city-bg.jpg");   
+    margin-top: 50px 
 }
 
 input {
