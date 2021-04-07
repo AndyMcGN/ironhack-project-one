@@ -20,32 +20,40 @@ class Word {
         push();
 
         translate(this.x +100, this.y)
-        if (Math.abs(this.rotation) > 25) {
-            this.rotationSpeed = this.baseRotationSpeed/1.3;
-        } else {
-            this.rotationSpeed = this.baseRotationSpeed;
-        }
-        if (this.direction === 'left') {
-            rotate(this.rotation -= this.rotationSpeed);
-            if (this.rotation <= -30) {
-                this.direction = 'right';
+
+        if (mode === 'play') {  // make things move and sway
+
+            if (Math.abs(this.rotation) > 25) {
+                this.rotationSpeed = this.baseRotationSpeed/1.3;
+            } else {
+                this.rotationSpeed = this.baseRotationSpeed;
             }
-        }
-        else if (this.direction === 'right') {
-            rotate(this.rotation += this.rotationSpeed);
-            if (this.rotation >= 30){
-                this.direction = 'left';
-                
+            if (this.direction === 'left') {
+                rotate(this.rotation -= this.rotationSpeed);
+                if (this.rotation <= -30) {
+                    this.direction = 'right';
+                }
             }
-        };
+            else if (this.direction === 'right') {
+                rotate(this.rotation += this.rotationSpeed);
+                if (this.rotation >= 30){
+                    this.direction = 'left';
+                    
+                }
+            };
+            this.y+= game.fallingWords.velocity;
+
+        }
+
+        if (mode === 'pause') {
+            rotate(this.rotation);
+        }
  
-        console.log(this.rotation)
         textSize(32);
         textStyle(BOLD)
         fill(149,20,169);
         // text(this.lang1, this.x, this.y);
         text(this.lang1, 0, 0);
-        this.y+= game.fallingWords.velocity;
         // image(game.gameBalloons[this.index], this.x-100, this.y-100, 200, 300);
         image(game.gameBalloons[this.index], -100, -100, 200, 300);
 

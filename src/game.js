@@ -25,8 +25,10 @@ class Game {
         this.dictionary = this.makeDictionary(words);
         this.input = new Input();
         this.player = new Player();
-
         this.input.setup();
+
+        this.input.input.hide()
+
         this.player.setup();
         this.fallingWords = new fallingWords();
         console.log(this.dictionary)
@@ -44,18 +46,26 @@ class Game {
         }
 
         if (mode === 'play') {
-
             if (frameCount % this.fallingWords.framesTillNextWord === 0) {
                 this.fallingWords.addWordtoFalling();
             }
 
-            this.fallingWords.filterMissedWords();
+            this.fallingWords.filterMissedWords();        
+        }
+
+
+
+        if (mode === 'play' || mode === 'pause') {
         
             this.fallingWords.currentlyFalling.slice().reverse().forEach(function (word) {
                 word.draw();
             });
         
         };
+
+        if (mode === 'pause') {
+            this.showPauseScreen();
+        }
 
         if (mode === 'game-over') {
 
@@ -111,6 +121,15 @@ class Game {
             
         };
     };
+
+    showPauseScreen() {
+        this.pauseScreen.draw();
+        this.input.input.hide()
+        // document.querySelector('#pause-input').focus();
+        this.pauseScreen.input.elt.focus();
+    }
+
+
 
     gameOver() {
         fill(255,255,255);
