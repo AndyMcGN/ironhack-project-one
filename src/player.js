@@ -6,15 +6,6 @@ class Player {
 
     }
 
-    setup() {
-        // let scoreElem = createDiv("Score: <span id='score'>0</span>");
-        // scoreElem.position(150,50);
-        // scoreElem.class("player-info");
-
-        // let livesElem = createDiv("Lives: <span id='lives'>3</span>");
-        // livesElem.position(150, 100);
-        // livesElem.class("player-info");
-    }
 
     drawLives() {
         let xPos = 50;
@@ -36,16 +27,15 @@ class Player {
     updateScore() {
         this.score++;
         console.log(this.score);
-        document.querySelector("#score").innerText = this.score;
         if (game.player.score % 3) {
             game.fallingWords.increaseDifficulty();
+            console.log(game.fallingWords.velocity)
         }
 
     };
 
     loseLife() {
         this.lives--;
-        // document.querySelector("#lives").innerText = this.lives;
         if (this.lives === 0) {
             // mode = 'game-over';
             // game.gameOver();
