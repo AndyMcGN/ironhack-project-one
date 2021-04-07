@@ -20,6 +20,7 @@ function draw() {
 
 function keyReleased(key) {
     if (mode === 'welcome' && keyCode === ENTER) {
+        // sound.play();
         mode = 'play';
         game.input.input.show();
         document.querySelector('#main-input').focus();

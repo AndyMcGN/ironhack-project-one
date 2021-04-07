@@ -11,6 +11,7 @@ class fallingWords {
             if (word.y >= height) {
                 game.player.loseLife();
                 game.pauseScreen = new PauseScreen(word);
+                crash.play();
                 mode = 'pause';
 
 

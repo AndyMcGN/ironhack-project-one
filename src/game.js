@@ -1,5 +1,7 @@
 let mode = 'welcome';
 
+let sound;
+let crash;
 class Game {
     
     preload() {
@@ -21,6 +23,9 @@ class Game {
             loadImage("assets/hotairballoon11.png"),
         ]
 
+        sound = loadSound("assets/music_david_gwyn_jones_the_moonpool_instrumental.mp3");
+        crash = loadSound("assets/car-crash.mp3")
+
         }
 
     setup() {
@@ -33,6 +38,8 @@ class Game {
 
         this.fallingWords = new fallingWords();
         console.log(this.dictionary)
+        sound.play();
+
         // this.word.setup();
     }
 
