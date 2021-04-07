@@ -31,7 +31,6 @@ class Game {
 
         this.input.input.hide()
 
-        this.player.setup();
         this.fallingWords = new fallingWords();
         console.log(this.dictionary)
         // this.word.setup();
