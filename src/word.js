@@ -21,42 +21,19 @@ class Word {
 
         translate(this.x +100, this.y)
 
-        if (mode === 'play') {  // make things move and sway
+        if (mode === 'play') {
 
-            if (Math.abs(this.rotation) > 20) {
-                this.rotationSpeed = this.baseRotationSpeed/1.3;
-            } else {
-                this.rotationSpeed = this.baseRotationSpeed;
-            }
-            if (this.direction === 'left') {
-                rotate(this.rotation -= this.rotationSpeed);
-                if (this.rotation <= -25) {
-                    this.direction = 'right';
-                }
-            }
-            else if (this.direction === 'right') {
-                rotate(this.rotation += this.rotationSpeed);
-                if (this.rotation >= 25){
-                    this.direction = 'left';
-                    
-                }
-            };
+            this.rotateBalloons();
             this.y+= game.fallingWords.velocity;
-
+            
         }
 
         if (mode === 'pause') {
             rotate(this.rotation);
         }
  
-        textSize(32);
-        textStyle(BOLD)
-        fill(149,20,169);
-        // text(this.lang1, this.x, this.y);
-        text(this.lang1, 0, 0);
-        // image(game.gameBalloons[this.index], this.x-100, this.y-100, 200, 300);
-        image(game.gameBalloons[this.index], -100, -100, 200, 300);
-
+        this.drawBalloonWithWord();
+       
         pop();
     }
 
@@ -70,5 +47,37 @@ class Word {
             if (this.lang1 === wordToCheck.lang1) return false;
             return true;
         })
+    }
+
+    rotateBalloons() {
+
+        if (Math.abs(this.rotation) > 20) {
+            this.rotationSpeed = this.baseRotationSpeed/1.3;
+        } else {
+            this.rotationSpeed = this.baseRotationSpeed;
+        }
+        if (this.direction === 'left') {
+            rotate(this.rotation -= this.rotationSpeed);
+            if (this.rotation <= -25) {
+                this.direction = 'right';
+            }
+        }
+        else if (this.direction === 'right') {
+            rotate(this.rotation += this.rotationSpeed);
+            if (this.rotation >= 25){
+                this.direction = 'left';
+                
+            }
+        };
+    }
+
+    drawBalloonWithWord() {
+        textSize(32);
+        textStyle(BOLD)
+        fill(149,20,169);
+        // text(this.lang1, this.x, this.y);
+        text(this.lang1, 0, 0);
+        // image(game.gameBalloons[this.index], this.x-100, this.y-100, 200, 300);
+        image(game.gameBalloons[this.index], -100, -100, 200, 300);
     }
 }
