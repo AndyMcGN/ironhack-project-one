@@ -12,7 +12,7 @@ class PauseScreen {
         push();
 
         // console.log(this.missedWord)
-        this.input.position(width /2 - 150, height/3 * 2);
+        this.input.position(width /2 -50, height/3 * 2);
         this.input.size(300);
         textStyle(BOLD)
 

@@ -8,11 +8,11 @@ class Player {
 
     setup() {
         let scoreElem = createDiv("Score: <span id='score'>0</span>");
-        scoreElem.position(100,50);
+        scoreElem.position(150,50);
         scoreElem.class("player-info");
 
         let livesElem = createDiv("Lives: <span id='lives'>3</span>");
-        livesElem.position(100, 100);
+        livesElem.position(150, 100);
         livesElem.class("player-info");
     }
 

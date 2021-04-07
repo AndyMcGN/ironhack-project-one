@@ -5,7 +5,7 @@ class Input {
     };
 
     setup() {
-        this.input.position(300, 700);
+        this.input.position(500, height - 70);
     };
 
     draw() {

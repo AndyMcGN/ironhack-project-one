@@ -76,16 +76,16 @@ class Game {
 
     showWelcomeScreen() {
 
-        image(this.welcomeBalloons[0], 300, 50, 550, 700);
+        image(this.welcomeBalloons[0], (width/2) - 250, 50, 450, 600);
         noStroke();
-        circle(575, 300, 400)
+        circle(width/2 - 25, 260, 375)
         textSize(30);
         textAlign(CENTER);
-        text("Welcome to the game!", 380, 190, 400, 200);
+        text("Welcome to the game!", 520, 140, 200, 100);
         textSize(20);
-        text("Save the hot air balloons from sinking by typing in the correct translations! Good luck!", 400, 250, 360, 200);
+        text("Save the hot air balloons from sinking by typing in the correct translations! Good luck!", 450, 250, 360, 200);
         textSize(25);
-        text("Press Enter to start.", 400, 360, 350, 200);
+        text("Press Enter to start.", 450, 360, 350, 200);
 
     }
 

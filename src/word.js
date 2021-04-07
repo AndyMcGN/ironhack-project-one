@@ -7,8 +7,8 @@ class Word {
         // this.hotAirBalloon1 = game.gameBalloons[0];
         this.index = Math.floor(Math.random()* game.gameBalloons.length);
         this.rotation = 0;
-        this.rotationSpeed = 0.5;
-        this.baseRotationSpeed = 0.5;
+        this.rotationSpeed = 0.2;
+        this.baseRotationSpeed = 0.2;
         this.direction = 'left';
     }
     // setup() {
@@ -23,20 +23,20 @@ class Word {
 
         if (mode === 'play') {  // make things move and sway
 
-            if (Math.abs(this.rotation) > 25) {
+            if (Math.abs(this.rotation) > 20) {
                 this.rotationSpeed = this.baseRotationSpeed/1.3;
             } else {
                 this.rotationSpeed = this.baseRotationSpeed;
             }
             if (this.direction === 'left') {
                 rotate(this.rotation -= this.rotationSpeed);
-                if (this.rotation <= -30) {
+                if (this.rotation <= -25) {
                     this.direction = 'right';
                 }
             }
             else if (this.direction === 'right') {
                 rotate(this.rotation += this.rotationSpeed);
-                if (this.rotation >= 30){
+                if (this.rotation >= 25){
                     this.direction = 'left';
                     
                 }

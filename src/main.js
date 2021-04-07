@@ -5,7 +5,8 @@ function preload() {
     }
 
 function setup() {
-    let canvas = createCanvas(1200,800);
+
+    let canvas = createCanvas(1300,700);
     angleMode(DEGREES);
     game.setup();
 }

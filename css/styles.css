@@ -19,9 +19,9 @@ input {
     background-color: white;
     padding: 10px 30px;
     border-radius: 20px;
-    width: 50%;
-    font-size: 32px;
+    font-size: 22px;
     text-align: center;
+    width: 500px;
 }
 
 .player-info, .player-info>span {
