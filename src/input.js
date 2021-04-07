@@ -8,10 +8,6 @@ class Input {
         this.input.position(500, height - 70);
     };
 
-    draw() {
-
-    }
-
     isCorrectAnswer() {
         console.log(this.input.value());
         // console.log(game.word.lang2);
