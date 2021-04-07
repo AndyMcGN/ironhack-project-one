@@ -10,6 +10,10 @@ class fallingWords {
         this.currentlyFalling = this.currentlyFalling.filter (word => {
             if (word.y >= height) {
                 game.player.loseLife();
+                game.pauseScreen = new PauseScreen(word);
+                mode = 'pause';
+
+
                 return false;
             }
             return true;
@@ -32,13 +36,13 @@ class fallingWords {
     }
 
     getSafeXValue() {
-        if (this.currentlyFalling.length === 0) return (Math.random() * width/1.3) + 100;
+        if (this.currentlyFalling.length === 0) return (Math.random() * width/1.5) + 100;
         
         let previousWord = this.currentlyFalling[this.currentlyFalling.length -1];
         console.log(previousWord)
         let x = previousWord.x;
         do {
-            x = (Math.random() * width/1.3) + 150;
+            x = (Math.random() * width/1.5) + 150;
         }
         while (Math.abs(x - previousWord.x) < 300);
 

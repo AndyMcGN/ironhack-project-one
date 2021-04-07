@@ -33,8 +33,8 @@ class Player {
         this.lives--;
         document.querySelector("#lives").innerText = this.lives;
         if (this.lives === 0) {
-            mode = 'game-over';
-            game.gameOver();
+            // mode = 'game-over';
+            // game.gameOver();
         }
     }
 }

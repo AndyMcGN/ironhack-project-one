@@ -1,15 +1,15 @@
 class Input {
     constructor() {
-        this.input;
+        this.input = createInput();
+        this.input.id("main-input")
     };
 
     setup() {
-        this.input = createInput();  
         this.input.position(300, 700);
     };
 
     draw() {
-        // console.log(this.input.value());
+
     }
 
     isCorrectAnswer() {
