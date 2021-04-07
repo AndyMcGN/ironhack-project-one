@@ -4,19 +4,19 @@ class Game {
     
     preload() {
         this.welcomeBalloons = [
-            loadImage("/assets/welcome-balloon.png"),
+            loadImage("assets/welcome-balloon.png"),
         ];
 
         this.gameBalloons = [
-            loadImage("/assets/hotairballoon2.png"),
-            loadImage("/assets/hotairballoon3.png"),
-            loadImage("/assets/hotairballoon4.png"),
-            loadImage("/assets/hotairballoon6.png"),
-            loadImage("/assets/hotairballoon7.png"),
-            loadImage("/assets/hotairballoon8.png"),
-            loadImage("/assets/hotairballoon9.png"),
-            loadImage("/assets/hotairballoon10.png"),
-            loadImage("/assets/hotairballoon11.png"),
+            loadImage("assets/hotairballoon2.png"),
+            loadImage("assets/hotairballoon3.png"),
+            loadImage("assets/hotairballoon4.png"),
+            loadImage("assets/hotairballoon6.png"),
+            loadImage("assets/hotairballoon7.png"),
+            loadImage("assets/hotairballoon8.png"),
+            loadImage("assets/hotairballoon9.png"),
+            loadImage("assets/hotairballoon10.png"),
+            loadImage("assets/hotairballoon11.png"),
         ]
 
         }
