@@ -15,7 +15,13 @@ canvas {
     background-image: url("../assets/city-bg.jpg");    
 }
 
-input {
+.dict-options > * {
+    background-color: green;
+    color: wheat;
+    
+}
+
+input[type="text"] {
     background-color: white;
     padding: 10px 30px;
     border-radius: 20px;
@@ -35,3 +41,4 @@ input {
 .word {
     color: red;
 }
+
