@@ -7,6 +7,8 @@ class Game {
             loadImage("assets/welcome-balloon.png"),
         ];
 
+        this.scoreBalloon = loadImage("assets/hot-air-balloon.png");
+
         this.gameBalloons = [
             loadImage("assets/hotairballoon2.png"),
             loadImage("assets/hotairballoon3.png"),
@@ -60,6 +62,9 @@ class Game {
             this.fallingWords.currentlyFalling.slice().reverse().forEach(function (word) {
                 word.draw();
             });
+
+            this.player.drawLives();
+            this.player.drawScore();
         
         };
 
