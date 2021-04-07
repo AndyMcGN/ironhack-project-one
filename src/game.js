@@ -7,6 +7,7 @@ class Game {
     preload() {
         this.welcomeBalloons = [
             loadImage("assets/welcome-balloon.png"),
+            loadImage("assets/hotairballoon.png")
         ];
 
         this.scoreBalloon = loadImage("assets/hot-air-balloon.png");
@@ -146,10 +147,17 @@ class Game {
 
     gameOver() {
         fill(255,255,255);
-        rect(400, 155, 400, 100, 20);
-        textSize(30);
-        fill(0,0,0)
-        text(`Your final score was ${this.player.score}`, 600, 215);
+        image(this.welcomeBalloons[1], (width/2) - 250, 50, 450, 600)
+        circle(width/2 - 25, 260, 340);
+        fill(0,0,0);
+        textSize(32);
+        text("Game Over!", 620, 200)
+        textSize(20);
+        text(`Your final score was`, 450, 230, 350, 200);
+        textSize(70);
+        text(this.player.score, width/2 - 30, 320);
+        textSize(20);
+        text("Press Enter to start again!", 450, 355, 350, 200 )
 
     }
 
