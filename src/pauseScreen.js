@@ -33,7 +33,7 @@ class PauseScreen {
 
     fadeEverythingPink() {
         push();
-            let shade = color(240,30,120)
+            let shade = color(250,40,130)
             shade.setAlpha(70)
             push()
             fill(shade)
