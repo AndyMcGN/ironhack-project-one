@@ -76,6 +76,8 @@ class Game {
 
     showWelcomeScreen() {
 
+
+
         image(this.welcomeBalloons[0], (width/2) - 250, 50, 450, 600);
         noStroke();
         circle(width/2 - 25, 260, 375)

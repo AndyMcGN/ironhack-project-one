@@ -9,8 +9,9 @@ class PauseScreen {
 
 
     draw() {
-        push();
 
+        this.fadeEverythingPink();
+        
         // console.log(this.missedWord)
         this.input.position(width /2 -50, height/3 * 2);
         this.input.size(300);
@@ -36,5 +37,17 @@ class PauseScreen {
             return true;
         }
     }
+
+    fadeEverythingPink() {
+        push();
+            let shade = color(240,30,120)
+            shade.setAlpha(70)
+            push()
+            fill(shade)
+            rect(0,0, width, height);
+        pop()
+
+    }
+    
 
 }
