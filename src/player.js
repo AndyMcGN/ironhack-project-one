@@ -2,7 +2,7 @@ class Player {
     constructor() {
 
         this.score = 0;
-        this.lives = 1;
+        this.lives = 3;
 
     }
 
