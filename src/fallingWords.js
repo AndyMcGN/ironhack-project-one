@@ -14,7 +14,6 @@ class fallingWords {
                 crash.play();
                 mode = 'pause';
 
-
                 return false;
             }
             return true;
@@ -22,8 +21,8 @@ class fallingWords {
     }
 
     addWordtoFalling() {
-        let randomIndex = Math.floor(Math.random()* game.dictionary.length);
-        let wordToAdd = game.dictionary[randomIndex];
+        let randomIndex = Math.floor(Math.random()* game.dictionaryManager.dictionary.length);
+        let wordToAdd = game.dictionaryManager.dictionary[randomIndex];
 
         if (!this.currentlyFalling.includes(wordToAdd)) {
             

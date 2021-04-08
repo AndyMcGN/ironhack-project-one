@@ -24,7 +24,7 @@ class PauseScreen {
 
     isCorrectPauseInput() {
         console.log(this.input.value());
-        if (this.input.value().trim() === this.missedWord.lang2) {
+        if (this.input.value().trim().toLowerCase() === this.missedWord.lang2.toLowerCase()) {
             this.input.hide();
             game.input.input.show();
             return true;
