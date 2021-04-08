@@ -112,9 +112,13 @@ class Game {
 
    hideWelcomeScreen() {
         document.querySelector(".dict-choices").hidden = true;
-        document.querySelector("#custom-set-text-field").hidden = true;
-        document.querySelector("#custom-set-submit").hidden = true;
-        document.querySelector("#custom-set-btn").hidden = true;
+        document.querySelector("#custom-set-btn").hidden = true;      
+        if(document.querySelector("#custom-set-text-field")) {
+            document.querySelector("#custom-set-text-field").hidden = true;
+            document.querySelector("#custom-set-submit").hidden = true;
+            document.querySelector("#cancel-Btn").hidden = true;
+        }
+
    }
 
     checkInput() {

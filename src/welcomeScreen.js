@@ -89,6 +89,17 @@ class WelcomeScreen {
             game.dictionaryManager.updateDictionaryAndStartGame(inp.elt.value);
         });
 
+        const backBtn = createButton('Cancel');
+        backBtn.position(800, 150 + inp.height );
+        backBtn.size(200);
+        backBtn.id("cancel-Btn");
+        backBtn.elt.addEventListener("click", function () {
+            document.querySelector("#custom-set-text-field").remove()
+            document.querySelector("#custom-set-submit").remove()
+            this.remove()
+            makingNewSet = false;
+        });
+
 
     }
     
