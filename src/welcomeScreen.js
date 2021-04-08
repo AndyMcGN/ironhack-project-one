@@ -19,7 +19,14 @@ class WelcomeScreen {
 
 
     draw() {
+
         this.drawMainBalloon();
+    
+        push()
+        textSize(18)
+        text("Click the arrows to change the direction of translation!", 820, 170, 300, 100)
+        
+        pop()
         // this.drawDictionaryOptions();
     }
 
