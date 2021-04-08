@@ -10,7 +10,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    background-image: url("../assets/main_bg.jpg");   
+    background-image: url("../assets/main_bg.jpg"); 
+    background-size: cover;  
 }
 
 
@@ -19,7 +20,7 @@ canvas {
     margin-top: 50px 
 }
 
-input {
+input[type="text"] {
     background-color: white;
     padding: 10px 30px;
     border-radius: 20px;
@@ -38,4 +39,12 @@ input {
 
 .word {
     color: red;
+}
+
+input[type="radio"] {
+    margin: 10px;
+}
+
+.dict-choices {
+    font-size: larger;
 }
