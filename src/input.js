@@ -15,7 +15,7 @@ class Input {
         for (let word of game.fallingWords.currentlyFalling)  {
             // console.log(word.lang2);
             
-            if (this.input.value().trim().toLowerCase() === word.lang2.toLowerCase()) {
+            if (this.input.value().trim().toLowerCase() === word[game.dictionaryManager.typedLang].toLowerCase()) {
                 this.input.value('');
                 return word;
             }

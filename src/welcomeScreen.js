@@ -54,11 +54,13 @@ function switchLangDirection() {
         document.querySelectorAll(".arrow").forEach(function (arrow) {
             
             game.dictionaryManager.fallingLang = "lang2";
+            game.dictionaryManager.typedLang = "lang1"
             arrow.innerHTML = "&#10229";
         });
     } else {
         document.querySelectorAll(".arrow").forEach(function (arrow) {
             game.dictionaryManager.fallingLang = "lang1";
+            game.dictionaryManager.typedLang = "lang2"
             arrow.innerHTML = "&#10230;";
         })
     }

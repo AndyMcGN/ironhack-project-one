@@ -24,7 +24,7 @@ class PauseScreen {
 
     isCorrectPauseInput() {
         console.log(this.input.value());
-        if (this.input.value().trim().toLowerCase() === this.missedWord.lang2.toLowerCase()) {
+        if (this.input.value().trim().toLowerCase() === this.missedWord[game.dictionaryManager.typedLang].toLowerCase()) {
             this.input.hide();
             game.input.input.show();
             return true;
@@ -47,11 +47,11 @@ class PauseScreen {
         textSize(25);
         text("Prompt:", width/2,100);
         textSize(40);
-        text(this.missedWord.lang1, width/2, 200);
+        text(this.missedWord[game.dictionaryManager.fallingLang], width/2, 200);
         textSize(25);
         text("Correct Answer:", width/2,300);
         textSize(40);
-        text(this.missedWord.lang2, width/2, 400);
+        text(this.missedWord[game.dictionaryManager.typedLang], width/2, 400);
     }
 
 }
