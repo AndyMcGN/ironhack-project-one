@@ -2,12 +2,13 @@ class Player {
     constructor() {
 
         this.score = 0;
-        this.lives = 1;
+        this.lives = 3;
 
     }
 
 
     drawLives() {
+        
         let xPos = 50;
 
         text("Lives:",130, 146)

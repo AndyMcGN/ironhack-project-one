@@ -44,7 +44,7 @@ class Game {
         
         this.fallingWords = new fallingWords();
         //! Uncomment at end so sound can play
-        // sound.play();
+        sound.play();
 
     }
 
@@ -93,7 +93,6 @@ class Game {
     startGame() {
         mode = 'play';
 
-        // sound.play();
 
 
         this.hideWelcomeScreen();
