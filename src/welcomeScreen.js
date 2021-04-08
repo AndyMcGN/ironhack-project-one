@@ -5,15 +5,19 @@ class WelcomeScreen {
     
     setup() {
         let yPos = 100;
-        choices = createDiv(addDictChoices()).size(300,400);
+        choices = createDiv(addDictChoices()).size(600,600);
         choices.class("dict-choices")
         choices.position(900, 250)
         // choices.innerHTML = addDictChoices();
         console.log(choices)
         document.querySelector("input[name='dictOptions']").checked = true;
+        document.querySelectorAll(".arrow").forEach(function (arrow) {
+            arrow.addEventListener("click", switchLangDirection)})
 
     }
     
+
+
     draw() {
         this.drawMainBalloon();
         // this.drawDictionaryOptions();
@@ -44,12 +48,34 @@ class WelcomeScreen {
 
 }
 
+function switchLangDirection() {
+
+    if(game.dictionaryManager.fallingLang === "lang1") {
+        document.querySelectorAll(".arrow").forEach(function (arrow) {
+            
+            game.dictionaryManager.fallingLang = "lang2";
+            arrow.innerHTML = "&#10229";
+        });
+    } else {
+        document.querySelectorAll(".arrow").forEach(function (arrow) {
+            game.dictionaryManager.fallingLang = "lang1";
+            arrow.innerHTML = "&#10230;";
+        })
+    }
+        this.addEventListener("click", switchLangDirection);
+        console.log(game.dictionaryManager.fallingLang);
+        
+    }
+
 function addDictChoices() {
     let optionsDiv = document.createElement('div');
     for (let [index, dictionary] of game.dictionaryManager.prefilledDictOptions.entries()) {
         console.log(dictionary)
         let dictOption = document.createElement("div");
-        dictOption.innerHTML = `<input type="radio" name="dictOptions" value="${index}" id="${dictionary.lang1}"></input><label for="${dictionary.lang1}">${dictionary.lang1}</label>`;
+        dictOption.innerHTML = `<input type="radio" name="dictOptions" value="${index}" id="${dictionary.lang1}"></input>
+            <label for="${dictionary.lang1}">${dictionary.lang1}</label>
+            <span class="arrow">&#10230;</span>
+            <span class="secondLang">${dictionary.lang2}</span>`;
         optionsDiv.appendChild(dictOption);
     }
     // console.log(document.querySelector("input[name='dictOptions']"))

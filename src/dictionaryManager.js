@@ -2,10 +2,8 @@ class DictionaryManager {
     constructor() {
         this.prefilledDictOptions = this.getDictionaryOptions(); 
         this.dictionaryChoice;
+        this.fallingLang = 'lang1'; 
     }
-
-
-        
 
     
     getDictionaryOptions() {
