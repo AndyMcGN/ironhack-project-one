@@ -48,3 +48,10 @@ input[type="radio"] {
 .dict-choices {
     font-size: larger;
 }
+
+.dict-choices span {
+    padding-left: 20px;
+}
+
+
+  
