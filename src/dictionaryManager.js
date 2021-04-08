@@ -39,20 +39,45 @@ class DictionaryManager {
         const specialChars = "äöüâêîôûçàèìòùñáéíóú";
         const necessaryChars = [];
         for (let [index, word] of this.dictionary.entries()) {
-            console.log(word[this.typedLang]);
+
             for (let i = 0; i < word[this.typedLang].length; i++) {
                 
                 if (specialChars.includes(word[this.typedLang][i].toLowerCase()) && !necessaryChars.includes(word[this.typedLang][i].toLowerCase())) {
                     
                     necessaryChars.push(word[this.typedLang][i]);
-                    
-                } else { console.log("nope, boring")}
+                } 
             }
-        }
-        console.log(necessaryChars)
-        return necessaryChars
+        }      
+        return necessaryChars;
     }
 
-    // )
+    renderCharButtons() {
+        let xPos = 700;
+        for (char of this.necessaryChars) {
+            console.log(char);
+            let button = createButton(char, char);
+            button.position(xPos, height - 130);
+            button.class("special-char-btn")
+            // button.mousePressed(this.typeChar(char));
+            xPos += 70
+        }
+
+        document.querySelectorAll(".special-char-btn").forEach(function (btn) {
+            btn.addEventListener("click", function() {
+                if (mode === 'play') {
+                    document.querySelector("#main-input").value += btn.value;
+                    document.querySelector("#main-input").focus();
+                } 
+                if (mode === 'pause') {
+                    document.querySelector("#pause-input").value += btn.value;
+                    document.querySelector("#pause-input").focus();
+                }
+            })
+        }) 
+    }
+
+    typeChar(char) {
+        document.querySelector("#main-input").value += char;
+    }
 }
 

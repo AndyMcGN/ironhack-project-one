@@ -53,5 +53,10 @@ input[type="radio"] {
     padding-left: 20px;
 }
 
-
+.special-char-btn {
+    background-color: white;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+}
   
