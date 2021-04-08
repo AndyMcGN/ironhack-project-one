@@ -45,7 +45,7 @@ class Game {
         this.fallingWords = new fallingWords();
         console.log(this.dictionary)
         //! Uncomment at end so sound can play
-        // sound.play();
+        sound.play();
 
     }
 

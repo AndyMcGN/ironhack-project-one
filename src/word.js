@@ -11,10 +11,6 @@ class Word {
         this.baseRotationSpeed = 0.2;
         this.direction = 'left';
     }
-    // setup() {
-
-
-    // }
 
     draw() {
         push();
