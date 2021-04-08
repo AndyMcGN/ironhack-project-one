@@ -139,6 +139,9 @@ class Game {
 
 
     gameOver() {
+        document.querySelectorAll(".special-char-btn").forEach(function (btn) {
+            btn.hidden = true;
+        })
         fill(255,255,255);
         image(this.welcomeBalloons[1], (width/2) - 250, 50, 450, 600)
         circle(width/2 - 25, 260, 340);
@@ -163,7 +166,7 @@ let words =
 const dictionaryChoices = [
     "Los Animales,Animals;un burro,a donkey;un caballo,a horse;un canguro,a kangaroo;un cerdo,a pig;un chita (/guepardo),a cheetah;un chivo (/una cabra),a goat;un conejo,a rabbit;un delfín,a dolphin;un elefante,a elephant;un gallo,a rooster;un gato,a cat;un león,a lion;un leopardo,a leopard;un lince,a lynx;un lobo,a wolf;un mono,a monkey;un oso perezoso,a sloth;un oso,a bear;un pájaro,a bird;un pato,a duck;",
     "My Hobbies,Meine Hobbies;To do sport,Sport treiben;Fishing,das Angeln;Golf,das Golfspiel;Football,der Fußball;Basketball,der Basketball;Tennis,das Tennis;Table tennis,das Tischtennis;Bowling,das Bowling;Horse riding,das Reiten;Boxing,das Boxen;Cycling,das Radfahren;Skiing,das Skifahren;Swimming,das Schwimmen;Jogging,das Joggen;Hiking,das Wandern;Camping,das Camping;Gardening,die Gartenarbeit;To go out with friends,mit Freunden ausgehen;To be lazy,Faulenzen",
-    "Les matières,Subjects;Les sciences,Science;L'informatique,Computing;L'histoire,History;La geographie,Geography;L'allemand,German;L'espagnol,Spanish;Le dessin,Art;La biologie,Biology;La chimie,Chemistry;La physique,Physics;La chorale,Choir;Le latin,Latin;La musique,Music;Les devoirs,Homework;Le professeur,Teacher;L'EPS,PE;La géographie,geography;Le théâtre,Drama;La gymnastique,Gymnastics;Les langues vivantes,Modern languages;",
+    "Les matières,Subjects;Les sciences,Science;L'informatique,Computing;L'histoire,History;L'allemand,German;L'espagnol,Spanish;Le dessin,Art;La biologie,Biology;La chimie,Chemistry;La physique,Physics;La chorale,Choir;Le latin,Latin;La musique,Music;Les devoirs,Homework;Le professeur,Teacher;L'EPS,PE;La géographie,geography;Le théâtre,Drama;La gymnastique,Gymnastics;Les langues vivantes,Modern languages;",
 
 ]
 
