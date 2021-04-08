@@ -90,7 +90,7 @@ class WelcomeScreen {
         });
 
         const backBtn = createButton('Cancel');
-        backBtn.position(800, 150 + inp.height );
+        backBtn.position(925, 100 + inp.height );
         backBtn.size(200);
         backBtn.id("cancel-Btn");
         backBtn.elt.addEventListener("click", function () {
@@ -103,16 +103,6 @@ class WelcomeScreen {
 
     }
     
-    // drawDictionaryOptions() {
-    //     let yPos = 100;
-    //     for (let dictionary of game.dictionaryManager.prefilledDictOptions) {
-    //         rect(650, yPos-45, 500, 70 )
-    //         text(dictionary.lang1, 800, yPos);
-    //         text(dictionary.lang2, 1030, yPos)
-    //         yPos += 100;
-    //     }
-    // }
-
 }
 
 function switchLangDirection() {
