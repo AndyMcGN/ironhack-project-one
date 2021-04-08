@@ -91,40 +91,21 @@ class Game {
 
     }
 
-    // showWelcomeScreen() {
+    startGame() {
+        // sound.play();
+        mode = 'play';
+        document.querySelector(".dict-choices").hidden = true;
+        // dictionaryChoice will get the string at the chosen index (needs refactoring the shit out of)
+        this.dictionaryManager.dictionaryChoice = dictionaryChoices[document.querySelector("input[name='dictOptions']:checked").value];
 
+        this.dictionaryManager.dictionary = this.dictionaryManager.makeDictionary(game.dictionaryManager.dictionaryChoice);
 
+        console.log(this.dictionaryManager.dictionary);
+        this.input.input.show();
+        document.querySelector('#main-input').focus();
+    }
 
-    //     image(this.welcomeBalloons[0], (width/2) - 250, 50, 450, 600);
-    //     noStroke();
-    //     circle(width/2 - 25, 260, 375)
-    //     textSize(30);
-    //     textAlign(CENTER);
-    //     text("Welcome to the game!", 520, 140, 200, 100);
-    //     textSize(20);
-    //     text("Save the hot air balloons from sinking by typing in the correct translations! Good luck!", 450, 250, 360, 200);
-    //     textSize(25);
-    //     text("Press Enter to start.", 450, 360, 350, 200);
-
-    // }
-
-    makeDictionary(stringOfWords) {
-
-        const dict = [];
-        const arrayOfPairs = stringOfWords.split(";");
-    
-        for (let pair = 0; pair <= arrayOfPairs.length-2; pair++) {
-
-            let splitWords = arrayOfPairs[pair].split(',');
-            let lang1 = splitWords[0].trim();
-            let lang2 = splitWords[1].trim()
-
-            let word = new Word(lang1, lang2);
-            
-            dict.push(word);
-        };
-        return dict;
-    };
+   
 
     checkInput() {
 
