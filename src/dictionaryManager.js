@@ -4,6 +4,7 @@ class DictionaryManager {
         this.dictionaryChoice;
         this.fallingLang = 'lang1'; 
         this.typedLang = "lang2";
+        this.necessaryChars;
     }
 
     
@@ -33,4 +34,25 @@ class DictionaryManager {
         };
         return dict;
     };
+
+    getSpecialChars() {
+        const specialChars = "äöüâêîôûçàèìòùñáéíóú";
+        const necessaryChars = [];
+        for (let [index, word] of this.dictionary.entries()) {
+            console.log(word[this.typedLang]);
+            for (let i = 0; i < word[this.typedLang].length; i++) {
+                
+                if (specialChars.includes(word[this.typedLang][i].toLowerCase()) && !necessaryChars.includes(word[this.typedLang][i].toLowerCase())) {
+                    
+                    necessaryChars.push(word[this.typedLang][i]);
+                    
+                } else { console.log("nope, boring")}
+            }
+        }
+        console.log(necessaryChars)
+        return necessaryChars
+    }
+
+    // )
 }
+
