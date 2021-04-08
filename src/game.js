@@ -98,9 +98,12 @@ class Game {
 
         this.hideWelcomeScreen();
         // dictionaryChoice will get the string at the chosen index (needs refactoring the shit out of)
-        this.dictionaryManager.dictionaryChoice = dictionaryChoices[document.querySelector("input[name='dictOptions']:checked").value];
+        if(!this.dictionaryManager.dictionary) {
+            this.dictionaryManager.dictionaryChoice = dictionaryChoices[document.querySelector("input[name='dictOptions']:checked").value];
 
-        this.dictionaryManager.dictionary = this.dictionaryManager.makeDictionary(game.dictionaryManager.dictionaryChoice);
+            this.dictionaryManager.dictionary = this.dictionaryManager.makeDictionary(game.dictionaryManager.dictionaryChoice);
+           
+        }
         this.dictionaryManager.necessaryChars = this.dictionaryManager.getSpecialChars();
         this.dictionaryManager.renderCharButtons();
 
@@ -110,7 +113,9 @@ class Game {
 
    hideWelcomeScreen() {
         document.querySelector(".dict-choices").hidden = true;
-
+        document.querySelector("#custom-set-text-field").hidden = true;
+        document.querySelector("#custom-set-submit").hidden = true;
+        document.querySelector("#custom-set-btn").hidden = true;
    }
 
     checkInput() {

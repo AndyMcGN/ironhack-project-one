@@ -85,7 +85,9 @@ class WelcomeScreen {
         submitBtn.position(700, 50 + inp.height );
         submitBtn.size(inp.width);
         submitBtn.id("custom-set-submit")
-        submitBtn.elt.addEventListener("click", game.dictionaryManager.updateDictionary);
+        submitBtn.elt.addEventListener("click", function () {
+            game.dictionaryManager.updateDictionaryAndStartGame(inp.elt.value);
+        });
 
 
     }

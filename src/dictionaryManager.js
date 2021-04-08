@@ -20,11 +20,16 @@ class DictionaryManager {
     makeDictionary(stringOfWords) {
 
         const dict = [];
+        stringOfWords = stringOfWords.substring(0,stringOfWords.length-1);
+        if (stringOfWords[stringOfWords.length-1] !== ';') stringOfWords += ';';
+        
         const arrayOfPairs = stringOfWords.split(";");
     
         for (let pair = 0; pair <= arrayOfPairs.length-2; pair++) {
 
             let splitWords = arrayOfPairs[pair].split(',');
+            console.log(splitWords);
+            
             let lang1 = splitWords[0].trim();
             let lang2 = splitWords[1].trim()
 
@@ -80,8 +85,12 @@ class DictionaryManager {
         document.querySelector("#main-input").value += char;
     }
 
-    updateDictionary() {
-        console.log('update dict')
+
+    //needs to be restructured so this isn't where the game gets fired.
+    updateDictionaryAndStartGame(input) {
+
+        this.dictionary = this.makeDictionary(input);
+        game.startGame();
     }
 }
 

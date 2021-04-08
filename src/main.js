@@ -20,8 +20,15 @@ function draw() {
 
 function keyReleased(key) {
     if (mode === 'welcome' && keyCode === ENTER) {
+        let input = document.querySelector("#custom-set-text-field");
+        console.log(document.activeElement)
+        if(input == document.activeElement) {
+            console.log(input.value)
+            game.dictionaryManager.updateDictionaryAndStartGame(input.value);
+        } else {
+            game.startGame();
 
-        game.startGame();
+        }
         // // sound.play();
        
         
