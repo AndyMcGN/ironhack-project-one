@@ -43,7 +43,6 @@ class Game {
         this.input.input.hide()
         
         this.fallingWords = new fallingWords();
-        console.log(this.dictionary)
         //! Uncomment at end so sound can play
         // sound.play();
 

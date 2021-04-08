@@ -79,5 +79,9 @@ class DictionaryManager {
     typeChar(char) {
         document.querySelector("#main-input").value += char;
     }
+
+    updateDictionary() {
+        console.log('update dict')
+    }
 }
 

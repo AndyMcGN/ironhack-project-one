@@ -60,3 +60,25 @@ input[type="radio"] {
     border-radius: 5px;
 }
   
+#custom-set-btn {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 22px;
+}
+
+#custom-set-text-field {
+    height: 500px;
+    padding: 20px;
+    font-size: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#custom-set-submit {
+    padding: 10px;
+    color: white;
+    background-color: rgba(62, 18, 133);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

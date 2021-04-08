@@ -1,4 +1,5 @@
 let choices;
+let makingNewSet;
 class WelcomeScreen {
     constructor() {
     }
@@ -12,8 +13,15 @@ class WelcomeScreen {
         console.log(choices)
         document.querySelector("input[name='dictOptions']").checked = true;
         document.querySelectorAll(".arrow").forEach(function (arrow) {
-            arrow.addEventListener("click", switchLangDirection)})
+            arrow.addEventListener("click", switchLangDirection)
+        });
 
+        let customBtn = createButton("Create");
+        customBtn.position(1050, 480);
+        customBtn.id("custom-set-btn");
+        customBtn.elt.addEventListener('click', game.welcomeScreen.makeCustomTextBox)
+
+        
     }
     
 
@@ -21,12 +29,33 @@ class WelcomeScreen {
     draw() {
 
         this.drawMainBalloon();
-    
-        push()
-        textSize(18)
-        text("Click the arrows to change the direction of translation!", 820, 170, 300, 100)
-        
-        pop()
+        if (!makingNewSet) {
+            push()
+            textSize(18)
+            text("Click the arrows to change the direction of translation!", 820, 170, 300, 100)
+            
+            textSize(24)
+            text("Or enter your own words to make a new set!", 980, 400)
+            pop()        
+        }
+
+
+        if(makingNewSet) {
+            push();
+            let shade = color(82, 52, 235)
+            shade.setAlpha(90)
+            push()
+            fill(shade)
+            rect(0,0, width, height);
+            pop()
+
+            circle(320, 260, 375);
+            textSize(18)
+            text("Enter your own words into the text box. Please make sure you separate each word from its translation by a comma. Separate the translation pairs by a semi-colon", 140, 180, 360, 200);
+            text("E.g.\n hot air balloon, la montgolfière;\n un gioco, un juego;", 320, 320);
+
+        }
+
         // this.drawDictionaryOptions();
     }
 
@@ -43,6 +72,24 @@ class WelcomeScreen {
         text("Press Enter to start.", 150, 360, 350, 200);
     }
 
+    makeCustomTextBox() {
+        makingNewSet = true;
+        
+
+        const inp = createElement("textarea", '');
+        inp.position(700, 50)
+        inp.size(600);
+        inp.id("custom-set-text-field")
+
+        const submitBtn = createButton('Create your set!');
+        submitBtn.position(700, 50 + inp.height );
+        submitBtn.size(inp.width);
+        submitBtn.id("custom-set-submit")
+        submitBtn.elt.addEventListener("click", game.dictionaryManager.updateDictionary);
+
+
+    }
+    
     // drawDictionaryOptions() {
     //     let yPos = 100;
     //     for (let dictionary of game.dictionaryManager.prefilledDictOptions) {
