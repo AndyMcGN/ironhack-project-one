@@ -5,9 +5,6 @@ class DictionaryManager {
         this.fallingLang = 'lang1'; 
     }
 
-
-        
-
     
     getDictionaryOptions() {
         let options = []

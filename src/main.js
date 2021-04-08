@@ -27,9 +27,11 @@ function keyReleased(key) {
         game.dictionaryManager.dictionaryChoice = dictionaryChoices[document.querySelector("input[name='dictOptions']:checked").value];
 
         game.dictionaryManager.dictionary = game.dictionaryManager.makeDictionary(game.dictionaryManager.dictionaryChoice);
+
         console.log(game.dictionaryManager.dictionary);
         game.input.input.show();
         document.querySelector('#main-input').focus();
+        
     }
     else if (mode === 'play'){
         game.checkInput();
