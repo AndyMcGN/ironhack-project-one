@@ -92,20 +92,27 @@ class Game {
     }
 
     startGame() {
-        // sound.play();
         mode = 'play';
-        document.querySelector(".dict-choices").hidden = true;
+
+        // sound.play();
+
+
+        this.hideWelcomeScreen();
         // dictionaryChoice will get the string at the chosen index (needs refactoring the shit out of)
         this.dictionaryManager.dictionaryChoice = dictionaryChoices[document.querySelector("input[name='dictOptions']:checked").value];
 
         this.dictionaryManager.dictionary = this.dictionaryManager.makeDictionary(game.dictionaryManager.dictionaryChoice);
+        this.dictionaryManager.necessaryChars = this.dictionaryManager.getSpecialChars();
+        this.dictionaryManager.renderCharButtons();
 
-        console.log(this.dictionaryManager.dictionary);
         this.input.input.show();
         document.querySelector('#main-input').focus();
     }
 
-   
+   hideWelcomeScreen() {
+        document.querySelector(".dict-choices").hidden = true;
+
+   }
 
     checkInput() {
 
