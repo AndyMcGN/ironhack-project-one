@@ -58,11 +58,16 @@ class DictionaryManager {
 
     renderCharButtons() {
         let xPos = 700;
+        let charDiv = createDiv();
+        charDiv.id("char-div");
+        container.appendChild(charDiv.elt);
+
         for (char of this.necessaryChars) {
             console.log(char);
-            let button = createButton(char, char);
-            button.position(xPos, height - 130);
-            button.class("special-char-btn")
+            let button = createButton(char, char);  
+            // button.position(xPos, height - 130);
+            button.class("special-char-btn");
+            document.querySelector("#char-div").appendChild(button.elt);
             // button.mousePressed(this.typeChar(char));
             xPos += 70
         }

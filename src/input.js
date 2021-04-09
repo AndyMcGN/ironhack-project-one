@@ -1,12 +1,11 @@
 class Input {
     constructor() {
         this.input = createInput();
-        this.input.id("main-input")
+        this.input.id("main-input");
+        container.appendChild(this.input.elt);
     };
 
-    setup() {
-        this.input.position(500, height - 70);
-    };
+    
 
     isCorrectAnswer() {
         console.log(this.input.value());

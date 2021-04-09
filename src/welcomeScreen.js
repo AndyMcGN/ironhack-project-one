@@ -6,9 +6,9 @@ class WelcomeScreen {
     
     setup() {
         let yPos = 100;
-        choices = createDiv(addDictChoices()).size(600,600);
+        choices = createDiv(addDictChoices());
         choices.class("dict-choices")
-        choices.position(900, 250)
+        container.appendChild(choices.elt);
         // choices.innerHTML = addDictChoices();
         console.log(choices)
         document.querySelector("input[name='dictOptions']").checked = true;
@@ -17,7 +17,8 @@ class WelcomeScreen {
         });
 
         let customBtn = createButton("Create");
-        customBtn.position(1050, 480);
+        container.appendChild(customBtn.elt);
+        // customBtn.position(1050, 480);
         customBtn.id("custom-set-btn");
         customBtn.elt.addEventListener('click', game.welcomeScreen.makeCustomTextBox)
 
@@ -77,21 +78,18 @@ class WelcomeScreen {
         
 
         const inp = createElement("textarea", '');
-        inp.position(700, 50)
-        inp.size(600);
+        container.appendChild(inp.elt);
         inp.id("custom-set-text-field")
 
         const submitBtn = createButton('Create your set!');
-        submitBtn.position(700, 50 + inp.height );
-        submitBtn.size(inp.width);
+        container.appendChild(submitBtn.elt);
         submitBtn.id("custom-set-submit")
         submitBtn.elt.addEventListener("click", function () {
             game.dictionaryManager.updateDictionaryAndStartGame(inp.elt.value);
         });
 
         const backBtn = createButton('Cancel');
-        backBtn.position(925, 100 + inp.height );
-        backBtn.size(200);
+        container.appendChild(backBtn.elt);
         backBtn.id("cancel-Btn");
         backBtn.elt.addEventListener("click", function () {
             document.querySelector("#custom-set-text-field").remove()

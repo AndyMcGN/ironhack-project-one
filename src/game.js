@@ -38,7 +38,6 @@ class Game {
         // this.dictionary = this.makeDictionary(words);
         this.input = new Input();
         this.player = new Player();
-        this.input.setup();
 
         this.input.input.hide()
         

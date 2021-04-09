@@ -3,7 +3,8 @@ class PauseScreen {
         this.missedWord = missedWord;
 
         this.input = createInput();
-        this.input.id("pause-input")
+        this.input.id("pause-input");
+        container.appendChild(this.input.elt);
 
     }
 
@@ -13,8 +14,6 @@ class PauseScreen {
         this.fadeEverythingPink();
         
         // console.log(this.missedWord)
-        this.input.position(width /2 -50, height/3 * 2);
-        this.input.size(300);
 
 
         this.drawPromptAndAnswer();
