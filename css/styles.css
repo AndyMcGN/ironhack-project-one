@@ -5,19 +5,23 @@
 }
 
 body {
-    display: flex;
+    /* display: flex; */
     height: 100vh;
-    justify-content: center;
+    /* justify-content: center;
     align-items: center;
-    flex-direction: column-reverse;
+    flex-direction: column-reverse; */
     background-image: url("../assets/main_bg.jpg"); 
-    background-size: cover;  
+    background-size: cover; 
 }
 
+p {
+    padding: 30px;
+    color: white;
+}
 
 canvas {
     background-image: url("../assets/city-bg.jpg");   
-    margin-top: 50px 
+    margin-top: 50px; 
 }
 
 input[type="text"] {
@@ -125,6 +129,8 @@ input[type="radio"] {
 
 .canvas-container {
     height: 100vh;
-    display: block;
     width: 100vw;
+    padding: 20px 100px 50px 100px;
+    
+    /* padding: 100px 300px; */
 }
