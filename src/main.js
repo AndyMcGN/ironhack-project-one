@@ -1,5 +1,5 @@
 const game = new Game();
-
+const container = document.querySelector(".canvas-container")
 function preload() {
         game.preload();
     }
@@ -7,6 +7,7 @@ function preload() {
 function setup() {
 
     let canvas = createCanvas(1300,700);
+    container.appendChild(canvas.elt);
     angleMode(DEGREES);
     game.setup();
 }
