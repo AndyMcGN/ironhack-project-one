@@ -1,4 +1,4 @@
-# ironhack-project-one - VocaBalloons!
+# VocaBalloons!
 
 ## My first project for the Ironhack Coding Bootcamp
 
