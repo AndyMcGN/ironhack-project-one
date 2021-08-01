@@ -12,17 +12,11 @@ class PauseScreen {
     draw() {
 
         this.fadeEverythingPink();
-        
-        // console.log(this.missedWord)
-
-
         this.drawPromptAndAnswer();
-
         pop();
     }
 
     isCorrectPauseInput() {
-        console.log(this.input.value());
         if (this.input.value().trim().toLowerCase() === this.missedWord[game.dictionaryManager.typedLang].toLowerCase()) {
             this.input.hide();
             game.input.input.show();

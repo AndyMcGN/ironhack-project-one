@@ -85,12 +85,5 @@ class DictionaryManager {
     typeChar(char) {
         document.querySelector("#main-input").value += char;
     }
-
-
-    // updateDictionaryAndStartGame(input) {
-
-    //     this.dictionary = this.makeDictionary(input);
-    //     game.startGame();
-    // }
 }
 

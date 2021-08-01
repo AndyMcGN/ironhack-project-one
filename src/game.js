@@ -35,14 +35,12 @@ class Game {
         this.welcomeScreen.setup();
 
 
-        // this.dictionary = this.makeDictionary(words);
         this.input = new Input();
         this.player = new Player();
 
         this.input.input.hide()
         
         this.fallingWords = new fallingWords();
-        //! Uncomment at end so sound can play
         sound.play();
 
     }
@@ -95,7 +93,6 @@ class Game {
 
 
         this.hideWelcomeScreen();
-        // dictionaryChoice will get the string at the chosen index (needs refactoring the shit out of)
         if(!this.dictionaryManager.dictionary) {
             this.dictionaryManager.dictionaryChoice = dictionaryChoices[document.querySelector("input[name='dictOptions']:checked").value];
 
@@ -138,7 +135,6 @@ class Game {
     showPauseScreen() {
         this.pauseScreen.draw();
         this.input.input.hide()
-        // document.querySelector('#pause-input').focus();
         this.pauseScreen.input.elt.focus();
     }
 

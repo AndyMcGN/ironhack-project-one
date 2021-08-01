@@ -1,7 +1,7 @@
 class fallingWords {
     constructor() {
         this.currentlyFalling = [];
-        this.velocity = 1; //change back to 0.5 after testing
+        this.velocity = 0.5;
         this.framesTillNextWord = 150;
 
     }
@@ -31,7 +31,6 @@ class fallingWords {
              
             wordToAdd.y = -200;
             this.currentlyFalling.push(wordToAdd);
-            // console.log(this.fallingWords);
         }
     }
 
@@ -52,11 +51,6 @@ class fallingWords {
     increaseDifficulty() {
             this.velocity += 0.1;
             this.framesTillNextWord -= 4;
-            console.log(`frames till next word: ${game.fallingWords.framesTillNextWord}`);
-
-            console.log('speed increasing');
-            console.log(game.fallingWords.velocity);
-        
-    }
+   }
 
 }

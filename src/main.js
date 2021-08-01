@@ -40,7 +40,6 @@ function keyReleased(key) {
                 document.querySelector('#main-input').value = '';
                 document.querySelector('#main-input').focus();
 
-
             } else {
                 game.input.input.hide()
 
