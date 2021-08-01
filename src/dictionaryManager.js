@@ -28,15 +28,15 @@ class DictionaryManager {
         for (let pair = 0; pair <= arrayOfPairs.length-2; pair++) {
 
             let splitWords = arrayOfPairs[pair].split(',');
-            console.log(splitWords);
             
             let lang1 = splitWords[0].trim();
-            let lang2 = splitWords[1].trim()
+            let lang2 = splitWords[1].trim();
 
             let word = new Word(lang1, lang2);
             
             dict.push(word);
         };
+        this.dictionary = dict;
         return dict;
     };
 
@@ -57,23 +57,19 @@ class DictionaryManager {
     }
 
     renderCharButtons() {
-        let xPos = 700;
         let charDiv = createDiv();
         charDiv.id("char-div");
         container.appendChild(charDiv.elt);
 
         for (char of this.necessaryChars) {
-            console.log(char);
             let button = createButton(char, char);  
-            // button.position(xPos, height - 130);
             button.class("special-char-btn");
             document.querySelector("#char-div").appendChild(button.elt);
-            // button.mousePressed(this.typeChar(char));
             xPos += 70
         }
 
-        document.querySelectorAll(".special-char-btn").forEach(function (btn) {
-            btn.addEventListener("click", function() {
+        document.querySelectorAll(".special-char-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
                 if (mode === 'play') {
                     document.querySelector("#main-input").value += btn.value;
                     document.querySelector("#main-input").focus();
@@ -91,11 +87,10 @@ class DictionaryManager {
     }
 
 
-    //needs to be restructured so this isn't where the game gets fired.
-    updateDictionaryAndStartGame(input) {
+    // updateDictionaryAndStartGame(input) {
 
-        this.dictionary = this.makeDictionary(input);
-        game.startGame();
-    }
+    //     this.dictionary = this.makeDictionary(input);
+    //     game.startGame();
+    // }
 }
 

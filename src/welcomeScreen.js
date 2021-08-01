@@ -85,7 +85,8 @@ class WelcomeScreen {
         container.appendChild(submitBtn.elt);
         submitBtn.id("custom-set-submit")
         submitBtn.elt.addEventListener("click", function () {
-            game.dictionaryManager.updateDictionaryAndStartGame(inp.elt.value);
+            game.dictionaryManager.makeDictionary(inp.elt.value);
+            game.startGame();
         });
 
         const backBtn = createButton('Cancel');
